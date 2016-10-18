@@ -129,7 +129,6 @@ module.exports = function(endpoint, opts) {
     if (opts.timeout !== false) request.setTimeout(opts.timeout || 10000, function() {
       // Clean up the socket
       request.setSocketKeepAlive(false);
-      request.socket.destroy();
 
       // Mark this as a gateway timeout
       res.status(504);
